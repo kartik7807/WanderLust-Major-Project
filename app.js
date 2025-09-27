@@ -16,6 +16,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(methodOverride("_method"));
 app.engine("ejs",ejsMate);
 app.use(express.static(path.join(__dirname,"/public")));
+mongoose.connect(process.env.ATLASDB_URL, {useNewUrlParser:true, useUnifiedTopology:true});// adding extra
 
 
 main().then(()=>{
