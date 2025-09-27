@@ -5,6 +5,7 @@ const Listing = require("./models/listing.js");
 const path=require("path");
 const methodOverride=require("method-override");
 const ejsMate=require("ejs-mate");
+const PORT = process.env.PORT || 8080;// adding extra
 
 
 const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
@@ -91,6 +92,7 @@ app.delete("/listings/:id",async(req,res)=>{
 
 // });
 
-app.listen(8080,()=>{
-    console.log("Listening on Port 8080");
-});
+// app.listen(8080,()=>{
+//     console.log("Listening on Port 8080");// this is original
+// });
+app.listen(PORT, () => console.log(`Listening on ${PORT}`)); // adding extra
